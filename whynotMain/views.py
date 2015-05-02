@@ -5,8 +5,19 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
-from whynot.whynotMain.models import Pic_Actions
+import whynot.whynotMain.models
 from whynot.whynotMain.forms import Pic_ActionsForm
+
+def home(request):
+    img_src = []
+    scores = []
+    images = Pic_Actions.objects.all()
+    
+    for i in images:
+        img_src.append((i.pic_before, i.pic_after))
+        scores.append(i.score)
+    
+    return render_to_response("whynotMain/efforts.html", )
 
 def list(request):
     # Handle file upload
