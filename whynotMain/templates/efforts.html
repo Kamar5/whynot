@@ -63,11 +63,13 @@
                 <h2>I saved a cat!</h2>
                 
                 <div class="effort-imgs">
-                  <img class="img-responsive img-before" src="img/cool_cat.jpg">
-                  <img class="img-responsive img-after" src="img/cool_cat.jpg">
+                  <!--<img class="img-responsive img-before" src="img/cool_cat.jpg">Hardcoded information switched out with db img src--> 
+                  <img class="img-responsive img-before" src={{img_src[0][0]}}>
+                  <!--<img class="img-responsive img-after" src="img/cool_cat.jpg">-->
+                  <img class="img-responsive img-before" src={{img_src[0][1]}}>
                 </div>
                 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p class="effort-results"><span class="effort-ranking">Ranking: 3</span><span class="effort-score pull-right">Score: 246</span></p>
+                <p class="effort-results"><span class="effort-ranking">Ranking: 3</span><span class="effort-score pull-right">Score: {{score[0]}}</span></p>
                 <a class="btn vote-buttons">
                     <i class="vote-button fa fa-thumbs-o-up"></i>
                     <i class="vote-button fa fa-thumbs-o-up"></i>
@@ -78,11 +80,13 @@
             <div class="col-md-4">
                 <h2>Beauty :)</h2>
                 <div class="effort-imgs">
-                  <img class="img-responsive img-before" src="img/eyes.jpg">
-                  <img class="img-responsive img-after" src="img/eyes.jpg">
+                  <!--<img class="img-responsive img-before" src="img/eyes.jpg">-->
+                  <img class="img-responsive img-before" src={{img_src[1][0]}}>
+                  <!--<img class="img-responsive img-after" src="img/eyes.jpg">-->
+                  <img class="img-responsive img-before" src={{img_src[1][1]}>
                 </div>
                 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p class="effort-results"><span class="effort-ranking">Ranking: 3</span><span class="effort-score pull-right">Score: 246</span></p>
+                <p class="effort-results"><span class="effort-ranking">Ranking: 3</span><span class="effort-score pull-right">Score: {{scores[1]}}</span></p>
                 <a class="btn vote-buttons">
                     <i class="vote-button fa fa-thumbs-o-up"></i>
                     <i class="vote-button fa fa-thumbs-o-up"></i>
@@ -93,11 +97,13 @@
             <div class="col-md-4">
                 <h2>I planted trees!</h2>
                 <div class="effort-imgs">
-                  <img class="img-responsive img-before" src="img/trees.jpg">
-                  <img class="img-responsive img-after" src="img/trees.jpg">
+                  <!--<img class="img-responsive img-before" src="img/trees.jpg">-->
+                  <img class="img-responsive img-before" src={{img_src[2][0]}}>
+                  <!--<img class="img-responsive img-after" src="img/trees.jpg">-->
+                  <img class="img-responsive img-before" src={{img_src[2][1]}}>
                 </div>
                 <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p class="effort-results"><span class="effort-ranking">Ranking: 3</span><span class="effort-score pull-right">Score: 246</span></p>
+                <p class="effort-results"><span class="effort-ranking">Ranking: 3</span><span class="effort-score pull-right">Score: {{scores[2]}}</span></p>
                 <a class="btn vote-buttons">
                     <i class="vote-button fa fa-thumbs-o-up"></i>
                     <i class="vote-button fa fa-thumbs-o-up"></i>
