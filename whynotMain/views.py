@@ -1,3 +1,32 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+
+from whynot.whynotMain.models import Pic_Actions
+from whynot.whynotMain.forms import Pic_ActionsForm
+
+def list(request):
+    # Handle file upload
+    if request.method == 'POST':
+        form = Pic_ActionsForm(request.POST, request.FILES)
+        if form.is_valid():
+            newdoc = Pic_Actions(docfile = request.FILES['docfile'])
+            newdoc.save()
+
+            # Redirect to the Pic_Actions list after POST
+            return HttpResponseRedirect(reverse('whynotMain.views.list'))
+    else:
+        form = Pic_ActionsForm() # A empty, unbound form
+
+    # Load Pic_Actionss for the list page
+    pic_Actionss = Pic_Actions.objects.all()
+
+    # Render list page with the Pic_Actionss and the form
+    return render_to_response(
+        'whynotMain/list.html',
+        {'pic_Actionss': pic_Actionss, 'form': form},
+        context_instance=RequestContext(request)
+    )
