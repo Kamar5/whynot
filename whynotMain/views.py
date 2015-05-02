@@ -5,8 +5,8 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
-import whynot.whynotMain.models
-from whynot.whynotMain.forms import Pic_ActionsForm
+from .models import Pic_Actions
+#from whynot.whynotMain.forms import Pic_ActionsForm
 
 def home(request):
     img_src = []
@@ -17,7 +17,7 @@ def home(request):
         img_src.append((i.pic_before, i.pic_after))
         scores.append(i.score)
     
-    return render_to_response("whynotMain/efforts.html", )
+    return render_to_response("index.html", )
 
 def list(request):
     # Handle file upload
